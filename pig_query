@@ -1,0 +1,7 @@
+inputfile= load '/user/cloudera/pollution_us_2000_2016.csv' using PigStorage(',');
+
+NO2 = foreach inputfile generate $7 as ciudad, $8 as fecha, $9 as unidades, $10 as promedio;
+
+store NO2 into '/user/cloudera/prueba_NO2' USING PigStorage (',');
+
+
